@@ -1,40 +1,50 @@
-# palindrome.py
-# Takes a string to see if it is a valid palindrome
+#!/usr/bin/env python
+
+""" Takes a string to see if it is a valid palindrome """
 
 import re
 
 def reverse(input_string):
-	reverse_string = []
+    """Reverses a string and returns it"""
 
-	for letter in range(len(input_string) - 1, 0-1, -1):
-		reverse_string.append(input_string[letter])
+    reverse_string = []
 
-	result = "".join(reverse_string)
-	return result
+    for letter in range(len(input_string) - 1, 0-1, -1):
+        reverse_string.append(input_string[letter])
+
+    result = "".join(reverse_string)
+    return result
 
 def palindrome(input_string):
-	# Remove any non-alpha characters from string and make it all lowercase
-	input_string = re.sub(r'[^a-zA-Z]', '', input_string.lower())
+    """Returns True/False if a string is a palindrome"""
 
-	# Get the reversed string
-	reverse_string = reverse(input_string)
+    # Remove any non-alpha characters from string and make it all lowercase
+    input_string = re.sub(r'[^a-zA-Z]', '', input_string.lower())
 
-	for i, letter in enumerate(input_string):
-		if letter != reverse_string[i]:
-			return False
-	return True
+    # Get the reversed string
+    reverse_string = reverse(input_string)
 
-user_string = input("Enter a string: ")
+    for i, letter in enumerate(input_string):
+        if letter != reverse_string[i]:
+            return False
+    return True
 
-# Alternatively, read a palindrome from a text file
-# file = open('palindrome.txt', 'r')
-# user_string = file.read()
-# file.close()
+def main():
+    """The main function"""
 
-print("\nString:\n\t", user_string)
-print("\nReversed:\n\t", reverse(user_string))
+    user_string = input("Enter a string: ")
 
-if palindrome(user_string):
-	print('The string is a palindrome!')
-else:
-	print('The string is not a palindrome!')
+    # Alternatively, read a palindrome from a text file
+    # file = open('palindrome.txt', 'r')
+    # user_string = file.read()
+    # file.close()
+
+    print("\nString:\n\t", user_string)
+    print("\nReversed:\n\t", reverse(user_string))
+    if palindrome(user_string):
+        print('The string is a palindrome!')
+    else:
+        print('The string is not a palindrome!')
+
+if __name__ == '__main__':
+    main()
