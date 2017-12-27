@@ -27,3 +27,8 @@ class Car():
     def increment_odometer(self, miles):
         """Add miles to the car"""
         self.odometer += miles
+
+    def fill_gas_tank(self):
+        """Fill up the gas tank"""
+        print("The gas tank for your " + self.make.title() + " " + self.model.title() + " is now full.")
+        

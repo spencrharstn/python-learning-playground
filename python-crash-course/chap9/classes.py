@@ -19,3 +19,20 @@ my_car.update_odometer(19283)
 my_car.read_odometer()
 my_car.increment_odometer(53)
 my_car.read_odometer()
+my_car.fill_gas_tank()
+
+from electric_car import ElectricCar
+my_electric_car = ElectricCar('nissan','leaf',2017)
+print(my_electric_car.get_name())
+my_electric_car.battery.describe_battery()
+my_electric_car.fill_gas_tank()
+my_electric_car.battery.get_range()
+
+import car
+my_truck = car.Car('toyota','tacoma', 2016)
+print(my_truck.get_name())
+
+
+from user import User 
+user1 = User('arthur','schaffer')
+print(user1.get_name())
