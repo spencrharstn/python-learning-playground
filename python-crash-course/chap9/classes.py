@@ -33,6 +33,16 @@ my_truck = car.Car('toyota','tacoma', 2016)
 print(my_truck.get_name())
 
 
-from user import User 
+from user import User, Admin 
 user1 = User('arthur','schaffer')
 print(user1.get_name())
+print(user1.get_email())
+user1.increment_login_attempts()
+user1.increment_login_attempts()
+user1.reset_login_attempts()
+
+user2 = Admin('art', 'vandelay')
+print(user2.get_name())
+print(user2.get_email())
+print("The admin, %s has the following privileges:" % (user2.get_name()))
+user2.privileges.show()
